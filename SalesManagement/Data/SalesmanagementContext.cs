@@ -30,9 +30,7 @@ namespace SalesManagement.Data
         {
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.Property(e => e.CategoryId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("category_id");
+                entity.Property(e => e.CategoryId).HasColumnName("category_id");
 
                 entity.Property(e => e.CategoryName)
                     .HasMaxLength(10)
@@ -50,9 +48,7 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<Invoice>(entity =>
             {
-                entity.Property(e => e.InvoiceId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("invoice_id");
+                entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
 
                 entity.Property(e => e.InvoiceClient)
                     .IsRequired()
@@ -68,9 +64,7 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.OrderId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("order_id");
+                entity.Property(e => e.OrderId).HasColumnName("order_id");
 
                 entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
 
@@ -86,9 +80,7 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.Property(e => e.ProductId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("product_id");
+                entity.Property(e => e.ProductId).HasColumnName("product_id");
 
                 entity.Property(e => e.ProductImage)
                     .HasColumnType("image")
@@ -114,9 +106,7 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<Store>(entity =>
             {
-                entity.Property(e => e.StoreId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("store_id");
+                entity.Property(e => e.StoreId).HasColumnName("store_id");
 
                 entity.Property(e => e.StoreAddress)
                     .HasMaxLength(200)
@@ -138,9 +128,7 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.UserId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("user_id");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.Property(e => e.UserPassword)
                     .IsRequired()
