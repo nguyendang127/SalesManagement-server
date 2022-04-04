@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nCJdkMuWqamGlFSD5Tuq5AwDU1rXAwW7PUqZDGusVkk=",
+  "Source": "SalesManagement",
+  "BasePath": "_content/SalesManagement",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

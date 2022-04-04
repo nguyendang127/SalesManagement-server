@@ -262,3 +262,9 @@ D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\zh-Hans\Microsoft.Co
 D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\runtimes\win-arm\lib\net6.0\dotnet-aspnet-codegenerator-design.exe
 D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\runtimes\win-arm64\lib\net6.0\dotnet-aspnet-codegenerator-design.exe
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\Azure.Core.dll
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\Azure.Identity.dll
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\C Sharp\SalesManagement\SalesManagement\bin\Debug\net6.0\System.Memory.Data.dll

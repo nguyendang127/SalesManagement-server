@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2022-04-04T04:15:17.397194Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-04-04T05:02:47.4593686Z"
+    }
+  },
+  "parameters": {
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "SalesManagementResourceGroup"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
+      "Type": "subscription",
+      "Value": "060e5bdb-c467-4b6a-bee6-c8456ab5576b"
+    }
+  }
+}
