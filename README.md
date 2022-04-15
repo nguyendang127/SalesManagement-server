@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/72656184/161429931-39a79c5b-4577-4b29-bac0-ee54dbdcf98b.png)
 
 ## Database - SQL SERVER 18
-![image](https://user-images.githubusercontent.com/72656184/161478015-e8a13dc1-9961-42e7-bc16-a40cbeec6785.png)\\
+![image](https://user-images.githubusercontent.com/72656184/161478015-e8a13dc1-9961-42e7-bc16-a40cbeec6785.png)
 
 
 Follow the pictures above will see the login field 
