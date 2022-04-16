@@ -7,9 +7,9 @@
       "connectionId": "VaultUri"
     },
     "mssql1": {
-      "secretStore": "AzureKeyVault",
-      "resourceId": null,
-      "type": "mssql.onprem",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/nguyendang127/databases/SalesManagement_db",
+      "type": "mssql.azure",
       "connectionId": "ConnectionStrings:SalesManagementDB"
     }
   }

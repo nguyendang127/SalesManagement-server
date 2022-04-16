@@ -7,11 +7,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbv/h4oMA90+eV+Omgss7sgAAAAACAAAAAAAQZgAAAAEAACAAAAAZAUK3D135BngXgtIZhWEl75HzMtbwcT5cvv2Tpot8JwAAAAAOgAAAAAIAACAAAAA/cA3MRsPdtNDNbj7Z347DPfUdoOf4JeKQyLyMnxddaoAAAABdriXAa5JAKjLHHJlPEO5VXAhbTAFJk1Grx7ZZVsrTDiZU2IcYTPAZ3YUvwMF4KQE9lQr1T1u2e2UpFXab4KFtSK7vfyabS6hPSlZ1k2cI80baRyeTC5kfsDKPwDZdxVgB9o07wp81J2WvKZ0D/nzgZB88gwftWUegkR/ksPbPrEAAAABwuKjeX64RbtXSnt7oQ7B6oEGcCyuwJ2l6hHfKfU82kw/xa0C04PEDpT2Cm3GfpRtryJ/G9qDXioE3f4HmFkui</EncryptedPassword>
-    <History>True|2022-04-04T05:07:19.7382346Z;False|2022-04-04T12:06:31.7482925+07:00;True|2022-04-04T12:04:01.3855638+07:00;True|2022-04-04T12:00:25.6692875+07:00;False|2022-04-04T11:56:50.1435527+07:00;False|2022-04-04T11:49:39.0031016+07:00;False|2022-04-04T11:30:27.7350905+07:00;False|2022-04-04T11:25:27.4733092+07:00;True|2022-04-04T11:19:16.1166311+07:00;</History>
+    <History>True|2022-04-05T00:59:10.7189060Z;False|2022-04-05T07:58:35.5740163+07:00;True|2022-04-05T07:57:12.4427388+07:00;True|2022-04-04T12:07:19.7382346+07:00;False|2022-04-04T12:06:31.7482925+07:00;True|2022-04-04T12:04:01.3855638+07:00;True|2022-04-04T12:00:25.6692875+07:00;False|2022-04-04T11:56:50.1435527+07:00;False|2022-04-04T11:49:39.0031016+07:00;False|2022-04-04T11:30:27.7350905+07:00;False|2022-04-04T11:25:27.4733092+07:00;True|2022-04-04T11:19:16.1166311+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <DestinationConnectionStrings Include="SalesManagementDB">
-      <Value>Data Source=MSI\SQLEXPRESS%3bInitial Catalog=SalesManagement%3bUser ID=nguyendang127%3bPassword=123456</Value>
+      <Value>Data Source=tcp:nguyendang127.database.windows.net,1433%3bInitial Catalog=SalesManagement_db%3bUser Id=nguyendang127%40nguyendang127%3bPassword=123456</Value>
     </DestinationConnectionStrings>
   </ItemGroup>
 </Project>
