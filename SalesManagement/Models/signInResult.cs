@@ -5,11 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SalesManagement.Models
 {
-    public partial class UserStoreResult
+    public partial class signInResult
     {
-        public int store_id { get; set; }
-        public string store_name { get; set; }
-        public string store_description { get; set; }
-        public string store_address { get; set; }
+        public int user_id { get; set; }
+        public string user_username { get; set; }
+        public string user_password { get; set; }
     }
 }

@@ -38,6 +38,18 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[signIn]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[StoreInvoices]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[StoreProduct]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[UserStore]",
          "ObjectType": 1
       }

@@ -33,17 +33,10 @@ namespace SalesManagement.Data
                 entity.Property(e => e.CategoryId).HasColumnName("category_id");
 
                 entity.Property(e => e.CategoryName)
-                    .HasMaxLength(10)
-                    .HasColumnName("category_name")
-                    .IsFixedLength();
+                    .HasMaxLength(250)
+                    .HasColumnName("category_name");
 
                 entity.Property(e => e.ProductId).HasColumnName("product_id");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Categories)
-                    .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Categories_Products");
             });
 
             modelBuilder.Entity<Invoice>(entity =>
@@ -60,6 +53,13 @@ namespace SalesManagement.Data
                     .HasColumnName("invoice_date");
 
                 entity.Property(e => e.InvoiceIsPaid).HasColumnName("invoice_is_paid");
+
+                entity.Property(e => e.StoreId).HasColumnName("store_id");
+
+                entity.HasOne(d => d.Store)
+                    .WithMany(p => p.Invoices)
+                    .HasForeignKey(d => d.StoreId)
+                    .HasConstraintName("FK_Invoices_Stores");
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -69,8 +69,6 @@ namespace SalesManagement.Data
                 entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
 
                 entity.Property(e => e.OrderQuantity).HasColumnName("order_quantity");
-
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
 
                 entity.HasOne(d => d.Invoice)
                     .WithMany(p => p.Orders)
@@ -82,9 +80,9 @@ namespace SalesManagement.Data
             {
                 entity.Property(e => e.ProductId).HasColumnName("product_id");
 
-                entity.Property(e => e.ProductImage)
-                    .HasColumnType("image")
-                    .HasColumnName("product_image");
+                entity.Property(e => e.CategoryId).HasColumnName("category_id");
+
+                entity.Property(e => e.OrderId).HasColumnName("order_id");
 
                 entity.Property(e => e.ProductName)
                     .IsRequired()
@@ -96,6 +94,17 @@ namespace SalesManagement.Data
                 entity.Property(e => e.ProductQuantity).HasColumnName("product_quantity");
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Products_Category");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.OrderId)
+                    .HasConstraintName("FK_Products_Orders");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Products)
@@ -111,6 +120,10 @@ namespace SalesManagement.Data
                 entity.Property(e => e.StoreAddress)
                     .HasMaxLength(200)
                     .HasColumnName("store_address");
+
+                entity.Property(e => e.StoreDescription)
+                    .HasMaxLength(200)
+                    .HasColumnName("store_description");
 
                 entity.Property(e => e.StoreName)
                     .IsRequired()
@@ -130,17 +143,17 @@ namespace SalesManagement.Data
             {
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
-                entity.Property(e => e.UserPassword)
+                entity.Property(e => e.password)
                     .IsRequired()
                     .HasMaxLength(20)
                     .HasColumnName("user_password");
 
-                entity.Property(e => e.UserPhone)
+                entity.Property(e => e.phone)
                     .IsRequired()
                     .HasMaxLength(11)
                     .HasColumnName("user_phone");
 
-                entity.Property(e => e.UserUsername)
+                entity.Property(e => e.username)
                     .IsRequired()
                     .HasMaxLength(20)
                     .HasColumnName("user_username");
