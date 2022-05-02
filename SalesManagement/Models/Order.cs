@@ -7,11 +7,16 @@ namespace SalesManagement.Models
 {
     public partial class Order
     {
+        public Order()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int OrderQuantity { get; set; }
-        public int ProductId { get; set; }
         public int? InvoiceId { get; set; }
         public int OrderId { get; set; }
 
         public virtual Invoice Invoice { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

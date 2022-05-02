@@ -7,19 +7,16 @@ namespace SalesManagement.Models
 {
     public partial class Product
     {
-        public Product()
-        {
-            Categories = new HashSet<Category>();
-        }
-
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public byte[] ProductImage { get; set; }
         public int ProductQuantity { get; set; }
         public long ProductPrice { get; set; }
+        public int CategoryId { get; set; }
         public int StoreId { get; set; }
+        public int? OrderId { get; set; }
 
+        public virtual Category Category { get; set; }
+        public virtual Order Order { get; set; }
         public virtual Store Store { get; set; }
-        public virtual ICollection<Category> Categories { get; set; }
     }
 }

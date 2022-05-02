@@ -10,6 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>SalesManagement.Data.SalesmanagementContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>D:\C Sharp\SalesManagement\SalesManagement\Properties\PublishProfiles\SalesManagement20220404110445 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>SalesManagement20220404110445 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
