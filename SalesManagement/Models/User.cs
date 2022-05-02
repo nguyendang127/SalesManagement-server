@@ -13,9 +13,9 @@ namespace SalesManagement.Models
         }
 
         public int UserId { get; set; }
-        public string UserUsername { get; set; }
-        public string UserPassword { get; set; }
-        public string UserPhone { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string phone { get; set; }
 
         public virtual ICollection<Store> Stores { get; set; }
     }

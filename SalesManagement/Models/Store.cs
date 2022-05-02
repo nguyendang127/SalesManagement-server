@@ -9,15 +9,18 @@ namespace SalesManagement.Models
     {
         public Store()
         {
+            Invoices = new HashSet<Invoice>();
             Products = new HashSet<Product>();
         }
 
         public int StoreId { get; set; }
         public string StoreName { get; set; }
+        public string StoreDescription { get; set; }
         public string StoreAddress { get; set; }
         public int UserId { get; set; }
 
         public virtual User User { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
         public virtual ICollection<Product> Products { get; set; }
     }
 }

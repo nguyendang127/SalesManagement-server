@@ -119,5 +119,17 @@ namespace SalesManagement.Controllers
         {
             return _context.Stores.Any(e => e.StoreId == id);
         }
+
+        [HttpGet("StoreProduct")]
+        public async Task<IEnumerable<StoreProductResult>> StoreProductResult(int? storeId)
+        {
+            return await _context.GetProcedures().StoreProductAsync(storeId);
+        }
+
+        [HttpGet("StoreInvoice")]
+        public async Task<IEnumerable<StoreInvoicesResult>> StoreInvoicesResult(int? storeId)
+        {
+            return await _context.GetProcedures().StoreInvoicesAsync(storeId);
+        }
     }
 }

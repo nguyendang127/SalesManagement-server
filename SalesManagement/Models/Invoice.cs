@@ -16,7 +16,9 @@ namespace SalesManagement.Models
         public string InvoiceClient { get; set; }
         public DateTime? InvoiceDate { get; set; }
         public bool? InvoiceIsPaid { get; set; }
+        public int? StoreId { get; set; }
 
+        public virtual Store Store { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

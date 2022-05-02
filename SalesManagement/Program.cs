@@ -1,7 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 //using Azure.Identity;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost7199/api",
+                                              "http://localhost:3000")
+                                                  .AllowAnyHeader()
+                                                  .AllowAnyMethod();
+                      });
+});
 
 //var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri"));
 //builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
@@ -27,6 +41,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 
