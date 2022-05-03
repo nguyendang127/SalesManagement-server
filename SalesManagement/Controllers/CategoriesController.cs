@@ -82,11 +82,23 @@ namespace SalesManagement.Controllers
             _context.Categories.Add(category);
             try
             {
+
+                var categoryExists = await _context.Categories.ToListAsync();
+                _context.Categories.Add(category);
+                foreach (var categories in categoryExists)
+                {
+                    Console.WriteLine($"{category.CategoryName,10}");
+                    if (categories.CategoryName == category.CategoryName)
+                    {
+                        return BadRequest("Category have already exists!");
+                    }
+                }
+
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (CategoryExists(category.CategoryId))
+                if (CategoryExistsName(category.CategoryName))
                 {
                     return Conflict();
                 }
@@ -118,6 +130,11 @@ namespace SalesManagement.Controllers
         private bool CategoryExists(int id)
         {
             return _context.Categories.Any(e => e.CategoryId == id);
+        }
+
+        private bool CategoryExistsName(string CategoryName)
+        {
+            return _context.Categories.Any(e => e.CategoryName == CategoryName);
         }
     }
 }

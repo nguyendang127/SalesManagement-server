@@ -33,15 +33,18 @@ namespace SalesManagement.Data
                 entity.Property(e => e.CategoryId).HasColumnName("category_id");
 
                 entity.Property(e => e.CategoryName)
+                    .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("category_name");
-
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
             });
 
             modelBuilder.Entity<Invoice>(entity =>
             {
                 entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
+
+                entity.Property(e => e.InvoiceAddress)
+                    .HasMaxLength(255)
+                    .HasColumnName("invoice_address");
 
                 entity.Property(e => e.InvoiceClient)
                     .IsRequired()
@@ -64,16 +67,24 @@ namespace SalesManagement.Data
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.OrderId).HasColumnName("order_id");
+                entity.HasNoKey();
 
                 entity.Property(e => e.InvoiceId).HasColumnName("invoice_id");
 
                 entity.Property(e => e.OrderQuantity).HasColumnName("order_quantity");
 
+                entity.Property(e => e.ProductId).HasColumnName("product_id");
+
                 entity.HasOne(d => d.Invoice)
-                    .WithMany(p => p.Orders)
+                    .WithMany()
                     .HasForeignKey(d => d.InvoiceId)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Orders_Invoices");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany()
+                    .HasForeignKey(d => d.ProductId)
+                    .HasConstraintName("FK_Orders_Products");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -81,8 +92,6 @@ namespace SalesManagement.Data
                 entity.Property(e => e.ProductId).HasColumnName("product_id");
 
                 entity.Property(e => e.CategoryId).HasColumnName("category_id");
-
-                entity.Property(e => e.OrderId).HasColumnName("order_id");
 
                 entity.Property(e => e.ProductName)
                     .IsRequired()
@@ -98,18 +107,12 @@ namespace SalesManagement.Data
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Products_Category");
-
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK_Products_Orders");
+                    .HasConstraintName("FK_Products_Categories");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.StoreId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Products_Stores");
             });
 
@@ -135,7 +138,7 @@ namespace SalesManagement.Data
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Stores)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Stores_Users");
             });
 
