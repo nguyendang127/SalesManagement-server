@@ -80,6 +80,7 @@ namespace SalesManagement.Controllers
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             _context.Products.Add(product);
+
             try
             {
                 await _context.SaveChangesAsync();

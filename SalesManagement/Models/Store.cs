@@ -17,7 +17,7 @@ namespace SalesManagement.Models
         public string StoreName { get; set; }
         public string StoreDescription { get; set; }
         public string StoreAddress { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public virtual User User { get; set; }
         public virtual ICollection<Invoice> Invoices { get; set; }

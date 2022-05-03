@@ -188,7 +188,7 @@ namespace SalesManagement.Controllers
                     Console.WriteLine($"{users.username,10}");
                     if (users.username == user.username)
                     {
-                        return Ok();
+                        return users;
                     }
                 }
             }
@@ -200,6 +200,7 @@ namespace SalesManagement.Controllers
             return BadRequest();
         }
 
+        //Forger password
         [HttpPut("{phone}")]
         public async Task<IActionResult> changePassword(string phone, User user)
         {

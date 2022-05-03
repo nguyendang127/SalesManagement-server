@@ -12,9 +12,8 @@ namespace SalesManagement.Models
             Products = new HashSet<Product>();
         }
 
-        public string CategoryName { get; set; }
-        public int ProductId { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

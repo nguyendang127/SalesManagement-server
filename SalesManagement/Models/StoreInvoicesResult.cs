@@ -7,14 +7,14 @@ namespace SalesManagement.Models
 {
     public partial class StoreInvoicesResult
     {
-        public string product_name { get; set; }
-        public int product_quantity { get; set; }
-        public long product_price { get; set; }
-        public int? order_id { get; set; }
         public int invoice_id { get; set; }
         public string invoice_client { get; set; }
         public DateTime? invoice_date { get; set; }
         public bool? invoice_is_paid { get; set; }
+        public string invoice_address { get; set; }
         public int order_quantity { get; set; }
+        public string product_name { get; set; }
+        public int product_quantity { get; set; }
+        public long product_price { get; set; }
     }
 }

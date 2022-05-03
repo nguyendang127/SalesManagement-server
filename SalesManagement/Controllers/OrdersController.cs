@@ -23,11 +23,11 @@ namespace SalesManagement.Controllers
         }
 
         // GET: api/Orders
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
-        {
-            return await _context.Orders.ToListAsync();
-        }
+        /* [HttpGet]
+         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+         {
+             return await _context.Orders.ToListAsync();
+         }*/
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
@@ -45,7 +45,7 @@ namespace SalesManagement.Controllers
 
         // PUT: api/Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        /*[HttpPut("{id}")]
         public async Task<IActionResult> PutOrder(int id, Order order)
         {
             if (id != order.OrderId)
@@ -72,14 +72,14 @@ namespace SalesManagement.Controllers
             }
 
             return NoContent();
-        }
+        }*/
 
         // POST: api/Orders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        /*[HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            _context.Orders.Add(order);
+            //_context.Orders.Add(order);
             try
             {
                 await _context.SaveChangesAsync();
@@ -97,7 +97,7 @@ namespace SalesManagement.Controllers
             }
 
             return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
-        }
+        }*/
 
         // DELETE: api/Orders/5
         [HttpDelete("{id}")]
@@ -115,9 +115,23 @@ namespace SalesManagement.Controllers
             return NoContent();
         }
 
-        private bool OrderExists(int id)
+        /*private bool OrderExists(int id)
         {
             return _context.Orders.Any(e => e.OrderId == id);
-        }
+        }*/
+
+
+
+        /*[HttpPost("PostOrder")]
+        public async Task<IEnumerable<Order>> InsertOrders(Order order)
+        {
+            //_context.Orders.Add(order);
+            *//*var query = _context.Orders.FromSqlRaw($"INSERT INTO Orders VALUES ({order.OrderQuantity}, {order.InvoiceId}, {order.ProductId});").ToList();*//*
+
+            await _context.SaveChangesAsync();
+            Console.WriteLine($"{order.ProductId,10}");
+            return CreatedAtAction("GetOrder", new {  }, order);
+            *//*return query;*//*
+        }*/
     }
 }

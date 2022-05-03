@@ -7,18 +7,13 @@ namespace SalesManagement.Models
 {
     public partial class Invoice
     {
-        public Invoice()
-        {
-            Orders = new HashSet<Order>();
-        }
-
         public int InvoiceId { get; set; }
         public string InvoiceClient { get; set; }
+        public string InvoiceAddress { get; set; }
         public DateTime? InvoiceDate { get; set; }
         public bool? InvoiceIsPaid { get; set; }
         public int? StoreId { get; set; }
 
         public virtual Store Store { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

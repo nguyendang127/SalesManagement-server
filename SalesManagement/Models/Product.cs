@@ -11,12 +11,10 @@ namespace SalesManagement.Models
         public string ProductName { get; set; }
         public int ProductQuantity { get; set; }
         public long ProductPrice { get; set; }
-        public int CategoryId { get; set; }
-        public int StoreId { get; set; }
-        public int? OrderId { get; set; }
+        public int? CategoryId { get; set; }
+        public int? StoreId { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual Order Order { get; set; }
         public virtual Store Store { get; set; }
     }
 }
